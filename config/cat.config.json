@@ -1,8 +1,11 @@
 {
   "appearance": {
-    "size": 120,
+    "renderMode": "3d",
+    "size": 160,
     "imagePath": "src/assets/cat-idle.png",
-    "useImageIfPresent": true
+    "useImageIfPresent": true,
+    "bodyColor": "#f0992e",
+    "eyeColor": "#6db84c"
   },
   "behavior": {
     "walkSpeed": 60,

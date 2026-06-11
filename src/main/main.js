@@ -56,6 +56,11 @@ function createWindow() {
 
   win.loadFile(path.join(__dirname, '..', 'renderer', 'index.html'));
 
+  // 将渲染进程的 console 转发到主进程标准输出，便于排查
+  win.webContents.on('console-message', (_e, level, message) => {
+    console.log('[renderer]', message);
+  });
+
   if (process.argv.includes('--dev')) {
     win.webContents.openDevTools({ mode: 'detach' });
   }

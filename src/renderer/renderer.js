@@ -6,12 +6,15 @@ async function main() {
 
   const el = document.getElementById('cat');
   const visual = document.getElementById('cat-visual');
+  const canvas = document.getElementById('cat-canvas');
 
-  if (config.appearance?.breathing !== false && config.behavior?.breathing !== false) {
+  // 仅 2D 模式下用 CSS 呼吸动画；3D 模式由 Three.js 自己驱动呼吸
+  const is3d = config.appearance?.renderMode === '3d';
+  if (!is3d && config.behavior?.breathing !== false) {
     visual.classList.add('breathing');
   }
 
-  const cat = new Cat(el, visual, config, workArea);
+  const cat = new Cat(el, visual, config, workArea, canvas);
   cat.registerBehaviors();
   cat.setState('idle');
 

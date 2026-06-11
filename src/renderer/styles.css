@@ -37,6 +37,26 @@ body {
   transition: transform 0.15s ease-out;
 }
 
+/* 3D 画布：填满容器，背景透明 */
+.cat-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* 3D 模式下隐藏 2D 视觉、显示 canvas */
+.cat.mode-3d .cat-visual {
+  display: none;
+}
+.cat.mode-3d .cat-canvas {
+  display: block;
+}
+
 /* 呼吸感：轻微缩放，让静态形象看起来在“活着” */
 @keyframes breathing {
   0%,

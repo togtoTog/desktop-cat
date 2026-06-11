@@ -7,9 +7,10 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- 小猫容器：实际形象由 cat.js 注入（写实图或内置 SVG 占位） -->
+  <!-- 小猫容器：2D 用 div 背景图，3D 用 canvas，由配置决定 -->
   <div id="cat" class="cat">
     <div id="cat-visual" class="cat-visual"></div>
+    <canvas id="cat-canvas" class="cat-canvas"></canvas>
   </div>
 
   <script type="module" src="renderer.js"></script>
