@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline';" />
+  <title>Desktop Cat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 小猫容器：实际形象由 cat.js 注入（写实图或内置 SVG 占位） -->
+  <div id="cat" class="cat">
+    <div id="cat-visual" class="cat-visual"></div>
+  </div>
+
+  <script type="module" src="renderer.js"></script>
+</body>
+</html>

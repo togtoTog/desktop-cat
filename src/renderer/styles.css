@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  /* 整个页面默认不接收鼠标事件，只有猫元素接收（配合主进程的穿透切换） */
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.cat {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 120px;
+  will-change: transform;
+  transform: translate(0, 0);
+  pointer-events: auto;
+}
+
+.cat-visual {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transform-origin: center bottom;
+  transition: transform 0.15s ease-out;
+}
+
+/* 呼吸感：轻微缩放，让静态形象看起来在“活着” */
+@keyframes breathing {
+  0%,
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.97) scaleX(1.02);
+  }
+}
+
+.cat-visual.breathing {
+  animation: breathing 3s ease-in-out infinite;
+}
+
+/* 朝向左时水平翻转 */
+.cat.face-left .cat-visual {
+  transform: scaleX(-1);
+}
+
+/* 被抓起时的轻微放大反馈 */
+.cat.grabbed .cat-visual {
+  transform: scale(1.08);
+}

@@ -1,0 +1,22 @@
+{
+  "name": "desktop-cat",
+  "version": "0.1.0",
+  "description": "一只可以放在桌面上活动的小猫桌宠（Electron 跨平台）",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "start:nosandbox": "electron . --no-sandbox"
+  },
+  "keywords": [
+    "desktop-pet",
+    "cat",
+    "electron",
+    "桌宠"
+  ],
+  "author": "togtoTog",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.0.0"
+  }
+}

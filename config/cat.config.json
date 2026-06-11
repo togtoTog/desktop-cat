@@ -1,0 +1,25 @@
+{
+  "appearance": {
+    "size": 120,
+    "imagePath": "src/assets/cat-idle.png",
+    "useImageIfPresent": true
+  },
+  "behavior": {
+    "walkSpeed": 60,
+    "idleMinSeconds": 3,
+    "idleMaxSeconds": 8,
+    "walkMinSeconds": 2,
+    "walkMaxSeconds": 5,
+    "followMouseRadius": 180,
+    "breathing": true
+  },
+  "personality": {
+    "name": "小橘",
+    "mood": "活泼",
+    "notes": "第三阶段定制化预留：性格、癖好、偏好等都将从这里读取"
+  },
+  "window": {
+    "alwaysOnTop": true,
+    "clickThrough": true
+  }
+}
